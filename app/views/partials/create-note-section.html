@@ -1,0 +1,10 @@
+<div ng-show="isCreatingNote" class="create-note-section">
+	<hr>
+	<button type="button" class="close" ng-click="hideCreatingForm()">&times;</button>
+	<h2>Create New Note</h2>
+	<form ng-submit="createNote()">
+		<input type="title" class="form-control" placeholder="title" ng-model="newNote.title" autofocus required>
+		<textarea class="form-control" placeholder="Description..." ng-model="newNote.description" required></textarea>
+		<input type="submit" class="btn btn-primary" value="Create">
+	</form>
+</div>

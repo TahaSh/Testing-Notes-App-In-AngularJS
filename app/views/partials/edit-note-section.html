@@ -1,0 +1,10 @@
+<div ng-show="isEditingNote" class="edit-note-section">
+	<hr>
+	<button type="button" class="close" ng-click="hideEditingForm()">&times;</button>
+	<h2>Update {{ currentEditingNote.title }}</h2>
+	<form ng-submit="updateNote(currentEditingNote.index)">
+		<input type="title" class="form-control" placeholder="title" ng-model="currentEditingNote.title" required>
+		<textarea class="form-control" placeholder="Description..." ng-model="currentEditingNote.description" required></textarea>
+		<input type="submit" class="btn btn-primary" value="Update">
+	</form>
+</div>

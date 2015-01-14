@@ -1,0 +1,51 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.note {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 1em;
+  clear: both;
+
+  & .media-heading {
+    margin-bottom: 0.5em;
+  }
+}
+
+.create-note-btn {
+  margin-bottom: 10px;
+}
+
+.note-form-section {
+  form textarea {
+    height: 150px;
+  }
+  form input, form textarea {
+    margin: 0.5em 0;
+  }
+}
+
+.edit-note-section, .create-note-section {
+  @extend .note-form-section
+}
+
+.note-btn {
+  font-size: 18px;
+  margin-top: 5px;
+}
+.remove-note-btn {
+  @extend .note-btn;
+  &:hover {
+    color: darken(red, 10%);
+  }
+}
+.edit-note-btn {
+  @extend .note-btn;
+  margin-right: 3px;
+  &:hover {
+    color: darken(#0055ff, 10%);
+  }
+}

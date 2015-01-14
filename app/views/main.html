@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-3">
+    <input type="search" class="form-control" ng-model="searchQuery" placeholder="Search Notes..." >
+    <div ng-include="'views/partials/create-note-section.html'"></div>
+    <div ng-include="'views/partials/edit-note-section.html'"></div>
+  </div>
+  <div class="col-md-9">
+    <button class="btn btn-primary pull-right create-note-btn" ng-click="showCreatingForm()">Add Note</button>
+    <ul class="media-list">
+      <li class="media note" ng-repeat="note in notes | filter:searchQuery">
+        <div class="media-body">
+          <button class="close glyphicon glyphicon-trash remove-note-btn" ng-click="removeNote($index)"></button>
+          <button class="close glyphicon glyphicon-edit edit-note-btn" ng-click="editNote($index)"></button>
+          <h3 class="media-heading">
+            {{ note.title }} 
+          </h3>
+          <p>{{ note.description }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
